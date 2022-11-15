@@ -41,14 +41,80 @@ class Game:
         print ("Choose 4 for spock.")
 
     def game_phase(self):
-        self.display_rules()
-        number_of_players = int(input("How many players? 1 or 2"))
+        #self.display_rules()
+        number_of_players = int(input("How many players? 1 or 2  "))
         if number_of_players == 1:
-            self.display_options()
-            human_gesture = self.human_one.choose_gesture()
-            ai_gesture = self.ai.choose_gesture()
-            if human_gesture == ai_gesture:
+            #self.display_options()
+            self.human_one.choose_gesture()
+            human_gesture = self.human_one.human_gesture
+            self.ai.choose_gesture()
+            ai_gesture = int(self.ai.ai_gesture)
+            human_score = 0
+            ai_score = 0
+
+            if human_gesture == 2 and ai_gesture == 1:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 1 and ai_gesture == 2:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 1 and ai_gesture == 0:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 0 and ai_gesture == 1:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 0 and ai_gesture == 3:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 3 and ai_gesture == 0:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 3 and ai_gesture == 4:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 4 and ai_gesture == 3:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 4 and ai_gesture == 2:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 2 and ai_gesture == 4:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 2 and ai_gesture == 3:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 3 and ai_gesture == 2:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 3 and ai_gesture == 1:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 1 and ai_gesture == 3:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 1 and ai_gesture == 4:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 4 and ai_gesture == 1:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 4 and ai_gesture == 0:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 0 and ai_gesture == 4:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == 0 and ai_gesture == 2:
+                human_score += 1
+                print("Player One wins this round!")
+            elif human_gesture == 2 and ai_gesture == 0:
+                ai_score += 1
+                print("AI wins this round!")
+            elif human_gesture == ai_gesture:
                 print ("Tie!")
+
             
 
         elif number_of_players == 2:
