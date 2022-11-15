@@ -7,7 +7,7 @@ class AI(Player):
         super().__init__()
         self.name = name
         self.score = 0 
-        
+
     def choose_gesture(self):
         self.choose_gesture = str(random.randint(0,4))
         gesture_list = ["rock", "paper", "scissors", "lizard", "spock"]

@@ -4,8 +4,9 @@ from ai import AI
 class Game:
 
     def __init__(self):
-        human = Human("Jeff")
-        ai = AI("AI")
+        self.human_one = Human("Player One")
+        self.human_two = Human("Player Two")
+        self.ai = AI("AI")
 
     def display_welcome(self):
         print('')
@@ -41,15 +42,23 @@ class Game:
 
     def game_phase(self):
         self.display_rules()
-        number_of_players = input(int("How many players? 1 or 2"))
+        number_of_players = int(input("How many players? 1 or 2"))
         if number_of_players == 1:
             self.display_options()
-            gesture_input = input(int("Choose your gesture.  "))
+            human_gesture = self.human_one.choose_gesture()
+            ai_gesture = self.ai.choose_gesture()
+            if human_gesture == ai_gesture:
+                print ("Tie!")
+            
+
+        elif number_of_players == 2:
+            self.display_options()
+            human_one_gesture = self.human_one.choose_gesture()
+            human_two_gesture = self.human_two.choose_gesture()
+            if human_one_gesture == human_two_gesture:
+                print ("Tie!")
 
 
-
-
-        print
         pass
 
     def display_overall_winner(self):
