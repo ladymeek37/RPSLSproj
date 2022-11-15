@@ -16,6 +16,8 @@ class Game:
         pass
     
     def display_rules(self):
+        print("")
+        print ("RULES:")
         print ("Scissors cut Paper")
         print ("Paper covers Rock")
         print ("Rock crushes Lizard")
@@ -26,8 +28,11 @@ class Game:
         print ("Paper disproves Spock")
         print ("Spock vaporizes Rock")
         print ("Rock crushes Scissors")
+        print("")
 
     def display_options(self):
+        print("")
+        print("OPTONS:")
         print ("Choose 0 for rock.")
         print ("Choose 1 for paper.")
         print ("Choose 2 for scissors.")
@@ -40,7 +45,6 @@ class Game:
         if number_of_players == 1:
             self.display_options()
             gesture_input = input(int("Choose your gesture.  "))
-            if 
 
 
 
@@ -55,3 +59,4 @@ class Game:
         pass
 
     def run_game(self):
+        pass
