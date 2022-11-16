@@ -243,14 +243,20 @@ class Game:
         if human_one_score > human_two_score :
             self.winner = self.human_two.name
         if human_one_score == human_two_score :
-            self.winner = "Tie!"
+            self.winner = "It's a tie!"
             
         pass
 
     def display_overall_winner(self):
-        pass
+        print ("And the winner of Rock, Paper, Sciccors, Lizard, Spock is...")
+        print (self.winner)
 
     def play_again(self):
+        again = input("Do you want to play again? y/n")
+        while again == "y":
+            self.game_phase()
+        if again == "n":
+            print("Thanks for playing!")
         pass
 
     def run_game(self):
