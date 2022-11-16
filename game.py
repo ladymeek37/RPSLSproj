@@ -260,4 +260,9 @@ class Game:
         pass
 
     def run_game(self):
+        self.display_welcome()
+        self.display_rules()
+        self.game_phase()
+        self.display_overall_winner()
+        self.play_again()
         pass

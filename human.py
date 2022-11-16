@@ -9,7 +9,7 @@ class Human(Player):
 
     def choose_gesture(self):
         print("")
-        self.human_gesture = int(input("Choose your gesture:  "))
+        self.human_gesture = int(input(f"{self.name}, choose your gesture:  "))
         gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         print(f'{self.name} has picked {gesture_list[self.human_gesture]}!')
         print("")
