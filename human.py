@@ -1,4 +1,5 @@
 from player import Player
+import time
 
 class Human(Player):
 
@@ -11,5 +12,6 @@ class Human(Player):
         print("")
         self.human_gesture = int(input(f"{self.name}, choose your gesture:  "))
         gesture_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        time.sleep(1)
         print(f'{self.name} has picked {gesture_list[self.human_gesture]}!')
         print("")

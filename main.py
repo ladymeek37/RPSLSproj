@@ -2,4 +2,4 @@ from game import Game
 
 game = Game()
 
-game.game_phase()
+game.run_game()

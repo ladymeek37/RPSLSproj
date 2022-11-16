@@ -1,5 +1,6 @@
 from human import Human
 from ai import AI
+import time
 
 class Game:
 
@@ -12,12 +13,12 @@ class Game:
         print('')
         print ("Welcome to Rock, Paper, Sciccors, Lizard, Spock!")
         print("Each match will be best of three games.")
-        print("Use number keys 0-4 to make a selection.")
         print('')
+        time.sleep(1)
         pass
     
     def display_rules(self):
-        print("")
+        print ("")
         print ("RULES:")
         print ("Scissors cut Paper")
         print ("Paper covers Rock")
@@ -29,9 +30,11 @@ class Game:
         print ("Paper disproves Spock")
         print ("Spock vaporizes Rock")
         print ("Rock crushes Scissors")
-        print("")
+        print ("")
+        time.sleep(1)
 
     def display_options(self):
+        time.sleep(1)
         print("")
         print("OPTONS:")
         print ("Choose 0 for rock.")
@@ -39,6 +42,8 @@ class Game:
         print ("Choose 2 for scissors.")
         print ("Choose 3 for lizard.")
         print ("Choose 4 for spock.")
+        print("Use number keys 0-4 to make a selection.")
+        time.sleep(1)
 
     def game_phase(self):
         human_one_score = 0
@@ -55,7 +60,7 @@ class Game:
             self.ai.choose_gesture()
             ai_gesture = int(self.ai.ai_gesture)
 
-
+            time.sleep(1)
             if human_one_gesture == 2 and ai_gesture == 1:
                 human_one_score += 1
                 print("Player One wins this round!")
@@ -140,12 +145,12 @@ class Game:
                 print ("Tie!")
                 round += 1
 
-        if ai_score > human_one_score:
-            self.winner = "AI"
-        if human_one_score > ai_score:
-            self.winner = "Player One"
-        if human_one_score == ai_score:
-            self.winner = "Tie!"
+            if round == 4 and ai_score > human_one_score:
+                    self.winner = "AI"
+            if round == 4 and human_one_score > ai_score:
+                    self.winner = "Player One"
+            if round == 4 and human_one_score == ai_score:
+                    self.winner = "Tie!"
             
 
         while number_of_players == 2 and round <= 3:
@@ -154,6 +159,7 @@ class Game:
             human_one_gesture = self.human_one.human_gesture
             self.human_two.choose_gesture()
             human_two_gesture = self.human_two.human_gesture
+            time.sleep(1)
             if human_one_gesture == 2 and human_two_gesture == 1:
                 human_one_score += 1
                 print("Player One wins this round!")
@@ -238,24 +244,31 @@ class Game:
                 print ("Tie!")
                 round += 1
 
-        if human_two_score > human_one_score:
-            self.winner = self.human_one.name
-        if human_one_score > human_two_score :
-            self.winner = self.human_two.name
-        if human_one_score == human_two_score :
-            self.winner = "It's a tie!"
-            
-        pass
+            if round == 4 and human_two_score > human_one_score:
+                self.winner = self.human_two.name
+            if round == 4 and human_one_score > human_two_score :
+                self.winner = self.human_one.name
+            if round == 4 and human_one_score == human_two_score :
+                self.winner = "It's a tie!"
+                
+            pass
 
     def display_overall_winner(self):
+        print ("")
         print ("And the winner of Rock, Paper, Sciccors, Lizard, Spock is...")
-        print (self.winner)
+        print (f"{self.winner}!!!")
 
     def play_again(self):
-        again = input("Do you want to play again? y/n")
+        print("")
+        again = input("Do you want to play again? y/n  ")
+        print("")
         while again == "y":
             self.game_phase()
+            self.display_overall_winner()
+            print("")
+            again = input("Do you want to play again? y/n  ")
         if again == "n":
+            print("")
             print("Thanks for playing!")
         pass
 
